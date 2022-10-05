@@ -1,4 +1,4 @@
-<mvc:View
+<mvc:View xmlns:layout="sap.ui.layout"
     controllerName="databindingsapui5.controller.DataBinding"
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
@@ -6,11 +6,86 @@
 >
 	<Shell id="shell">
 		<App id="app">
-			<pages>
-				<Page id="page" title="{i18n>title}">
-					<content />
+				<Page id="page1" title="SAPUI5 Data Binding">
+					<content>
+						<layout:BlockLayout background="Dashboard">
+							<layout:BlockLayoutRow accentCells="Accent1">
+								<layout:BlockLayoutCell id="Accent1" title="Load JSON data as a data source from the Manifest">
+									<Table
+										id="idProductsTable"
+										items="{
+											path: 'ProductsList>/Products',
+											sorter: {
+												path: 'Name'
+											}
+										}">
+										<columns>
+											<Column width="20em">
+												<Text text="Product" />
+											</Column>
+											<Column minScreenWidth="Tablet" demandPopin="true">
+												<Text text="Supplier" />
+											</Column>
+											<Column hAlign="Right">
+												<Text text="Price" />
+											</Column>
+										</columns>
+										<items>
+											<ColumnListItem>
+												<cells>
+													<ObjectIdentifier title="{ProductsList>Name}" text="{ProductsList>ProductId}" />
+													<Text text="{ProductsList>SupplierName}" />
+													<ObjectNumber number="{
+														parts:[{path:'ProductsList>Price'},{path:'ProductsList>Currency/CurrencyCode'}],
+														type: 'sap.ui.model.type.Currency'
+														}"
+														unit="{ProductsList>Currency/CurrencyCode}" />
+												</cells>
+											</ColumnListItem>
+										</items>
+									</Table>
+								</layout:BlockLayoutCell>
+							</layout:BlockLayoutRow>
+							<layout:BlockLayoutRow accentCells="Accent1">
+								<layout:BlockLayoutCell id="Accent2" title="Load JSON data from the Controller">
+									<Table
+										id="idProductsTable2"
+										items="{
+											path: 'ProductsModel>/Products',
+											sorter: {
+												path: 'Name'
+											}
+										}">
+										<columns>
+											<Column width="20em">
+												<Text text="Product" />
+											</Column>
+											<Column minScreenWidth="Tablet" demandPopin="true">
+												<Text text="Supplier" />
+											</Column>
+											<Column hAlign="Right">
+												<Text text="Price" />
+											</Column>
+										</columns>
+										<items>
+											<ColumnListItem>
+												<cells>
+													<ObjectIdentifier title="{ProductsModel>Name}" text="{ProductsModel>ProductId}" />
+													<Text text="{ProductsModel>SupplierName}" />
+													<ObjectNumber number="{
+														parts:[{path:'ProductsModel>Price'},{path:'ProductsModel>Currency/CurrencyCode'}],
+														type: 'sap.ui.model.type.Currency'
+														}"
+														unit="{ProductsModel>Currency/CurrencyCode}" />
+												</cells>
+											</ColumnListItem>
+										</items>
+									</Table>
+								</layout:BlockLayoutCell>
+							</layout:BlockLayoutRow>
+						</layout:BlockLayout>
+					</content>
 				</Page>
-			</pages>
 		</App>
 	</Shell>
 </mvc:View>

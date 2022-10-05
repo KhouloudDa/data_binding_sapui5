@@ -1,0 +1,36 @@
+{
+    "Products": [
+        {
+            "Name": "Astro Laptop 1516",
+            "ProductId": "HT-1251",
+            "SupplierName": "Ultrasonic United",
+            "Price": "989.00",
+            "Currency": {
+                "CurrencyCode": "EUR",
+                "CurrencyText": "Euro" 
+            }
+                      
+        },
+        {
+            "Name": "Audio/Video Cable Kit",
+            "ProductId": "HT-2026",
+            "SupplierName": "Titanium",
+            "Price": "112.00",
+            "Currency": {
+                "CurrencyCode": "EUR",
+                "CurrencyText": "Euro" 
+            }       
+        },
+        {
+            "Name": "Astro Laptop 1516",
+            "ProductId": "HT-6011",
+            "SupplierName": "Technocom",
+            "Price": "76.00",
+            "Currency": {
+                "CurrencyCode": "EUR",
+                "CurrencyText": "Euro" 
+            }        
+        }
+    
+    ]
+}

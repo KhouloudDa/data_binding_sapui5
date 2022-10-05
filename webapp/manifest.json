@@ -10,7 +10,13 @@
     "title": "{{appTitle}}",
     "description": "{{appDescription}}",
     "resources": "resources.json",
-    "ach": "ach"
+    "ach": "ach",
+    "dataSources": {
+			"tableData": {
+				"uri": "model/Products.json",
+				"type": "JSON"
+			}
+		}
   },
   "sap.ui": {
     "technology": "UI5",
@@ -56,7 +62,11 @@
         "settings": {
           "bundleName": "databindingsapui5.i18n.i18n"
         }
-      }
+      },
+			"ProductsList": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "tableData"
+			}
     },
     "resources": {
       "css": [
